@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>ppilev</Authors>
+    <PackageProjectUrl>https://github.com/ppilev/series-queue</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ppilev/series-queue</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>Implementation of series queue which ensures items can be enqueued only sequentially.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Plamen.Pilev\source\repos\continuous-queue\src\SeriesQueue\SeriesQueue.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PriorityQueue" Version="1.0.4" />
+  </ItemGroup>
+
+</Project>

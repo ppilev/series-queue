@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SeriesQueue</name>
+    </assembly>
+    <members>
+        <member name="T:System.Collections.ISeriesItem`1">
+            <summary>
+            Represents an item with a position in a series.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:System.Collections.ISeriesItem`1.Ordinal">
+            <summary>
+            Gets the position of an item in a series.
+            </summary>
+        </member>
+        <member name="T:System.Collections.SeriesItem`1">
+            <summary>
+            Provides a wrapper for any object's instance to be represented as <see cref="T:System.Collections.ISeriesItem`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:System.Collections.SeriesItem`1.#ctor(`0,System.Int32)">
+            <summary>
+            Creates a new instance of <see cref="T:System.Collections.SeriesItem`1"/> class.
+            </summary>
+            <param name="data">The wrapped object intance.</param>
+            <param name="sequence">This instance sequence number.</param>
+        </member>
+        <member name="P:System.Collections.SeriesItem`1.Ordinal">
+            <summary>
+            Gets the sequence number of this instance is placed in a sequence.
+            </summary>
+        </member>
+        <member name="P:System.Collections.SeriesItem`1.Data">
+            <summary>
+            Gets the wrapped object's instance.
+            </summary>
+        </member>
+        <member name="T:System.Collections.SeriesQueue`1">
+            <summary>
+            Represents a prioritized collection of <see cref="T:System.Collections.ISeriesItem`1"/> items.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:System.Collections.SeriesQueue`1.#ctor(System.Collections.Generic.List{`0},System.Nullable{System.Int32})">
+            <summary>
+            Creates a new instance of <see cref="T:System.Collections.SeriesQueue`1"/>.
+            </summary>
+            <param name="items">The list of binary-tree ordered items usually retrieved as a result of <see cref="M:System.Collections.SeriesQueue`1.ToList"/> method.</param>
+            <param name="nextOrdinal">Optionally provides the next ordinal the queue can dequeue.</param>
+            <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Collections.ISeriesItem`1.Ordinal"/> of the element at head of the queue cannot be ahead of <paramref name="nextOrdinal"/> of the queue.</exception>
+        </member>
+        <member name="P:System.Collections.SeriesQueue`1.HeadOfSequence">
+            <summary>
+            Gets the ordinal number of next <see cref="T:System.Collections.ISeriesItem`1"/> that can be dequeued.
+            </summary>
+        </member>
+        <member name="P:System.Collections.SeriesQueue`1.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:System.Collections.SeriesQueue`1"/>.
+            </summary>
+        </member>
+        <member name="M:System.Collections.SeriesQueue`1.Enqueue(`0)">
+            <summary>
+            Adds an object to the <see cref="T:System.Collections.SeriesQueue`1"/>.
+            </summary>
+            <param name="item">The object to add to the <see cref="T:System.Collections.SeriesQueue`1"/></param>
+        </member>
+        <member name="M:System.Collections.SeriesQueue`1.Dequeue">
+            <summary>
+            Removes and returns the object at the beginning of the <see cref="T:System.Collections.SeriesQueue`1"/>.
+            </summary>
+            <returns>The object that is removed from the beginning of the <see cref="T:System.Collections.SeriesQueue`1"/>.</returns>
+        </member>
+        <member name="M:System.Collections.SeriesQueue`1.AddAndDequeueAll(`0)">
+            <summary>
+            Adds an object to the <see cref="T:System.Collections.SeriesQueue`1"/> and then removes and returns all sequential objects where <see cref="P:System.Collections.ISeriesItem`1.Ordinal"/> 
+            of the element at the head of the queue matches with <see cref="P:System.Collections.SeriesQueue`1.HeadOfSequence"/> of the queue.
+            </summary>
+            <param name="item">The object to add to the <see cref="T:System.Collections.SeriesQueue`1"/>.</param>
+            <returns>All removed objects.</returns>
+        </member>
+        <member name="M:System.Collections.SeriesQueue`1.DequeueAll">
+            <summary>
+            Removes and returns all sequential objects when <see cref="P:System.Collections.ISeriesItem`1.Ordinal"/> of the element at the head of the queue 
+            matches with <see cref="P:System.Collections.SeriesQueue`1.HeadOfSequence"/> of the queue.
+            </summary>
+            <returns>All removed objects.</returns>
+        </member>
+        <member name="M:System.Collections.SeriesQueue`1.ToList">
+            <summary>
+            Returns the list of queue items as a binary-tree ordered list.
+            </summary>
+            <returns>The list of queue items.</returns>
+        </member>
+    </members>
+</doc>
